@@ -29,7 +29,7 @@ class Progression
 
   def tick_more_elements_than_bars(ticks_per_bump)
     if @current_inner_tick >= ticks_per_bump
-      print '#'
+      print tick_character
       @current_inner_tick = 0
     end
     @current_inner_tick += 1
@@ -37,7 +37,11 @@ class Progression
 
   def tick_more_bars_than_elements(ticks_per_bump)
     (window_size/count).to_i.times do
-      print '#'
+      print tick_character
     end
+  end
+
+  def tick_character
+    '='
   end
 end
