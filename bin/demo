@@ -13,7 +13,7 @@ arr_1.size.times do
 end
 
 puts "More bars than elements in the window"
-arr_2 = [*1..2]
+arr_2 = [*1..10]
 p = Progression.new(arr_2.size)
 
 arr_2.size.times do
