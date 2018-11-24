@@ -10,9 +10,6 @@ class Progression
   end
 
   def tick
-    # TODO Store inner ticks. Bump progress bar necessary amount of times
-    # when inner tick count reaches enough to move the terminal
-
     ticks_per_bump = Calculator.ticks_per_bump(window_size, count)
 
     if ticks_per_bump > 1
@@ -43,20 +40,4 @@ class Progression
       print '#'
     end
   end
-end
-
-puts "More elements than bars in the window"
-p = Progression.new(1000)
-
-1000.times do
-  p.tick
-  sleep(0.001)
-end
-
-puts "More bars than elements in the window"
-p = Progression.new(5)
-
-5.times do
-  p.tick
-  sleep(0.5)
 end
