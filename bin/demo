@@ -1,17 +1,22 @@
 #!/usr/bin/env ruby
 
-puts "More elements than bars in the window"
-p = Progression.new(1000)
+require_relative '../lib/progression.rb'
 
-1000.times do
+puts "More elements than bars in the window"
+
+arr_1 = [*1..10000]
+p = Progression.new(arr_1.size)
+
+arr_1.size.times do
   p.tick
   sleep(0.001)
 end
 
 puts "More bars than elements in the window"
-p = Progression.new(5)
+arr_2 = [*1..2]
+p = Progression.new(arr_2.size)
 
-5.times do
+arr_2.size.times do
   p.tick
   sleep(0.5)
 end
